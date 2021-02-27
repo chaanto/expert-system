@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Expert System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="text-center"> 
+            <h1>Food Recommending</h2>
+        </div>
+        <div class="jumbotron" style="margin-top:30px;">
+            <h1 class="text-center"><span class="capitalize">{{ value }}</span> spesific additional ingridients</h1>
+            <p class="lead"></p>
+            <div style="margin-top:50px;">
+                <form action="/{{value}}/result" method="POST" >
+                    <h4>
+                        <p>1. Please select type of dish :</p>
+                        <div style="margin-left:25px;">
+                            {% if value == 'egg' : %}
+                                <input type="radio" id="chicken-egg" name="food-type" value="chicken-egg">
+                                <label for="chicken-egg">Chicken {{value}}s</label><br>
+
+                                <input type="radio" id="quail-egg" name="food-type" value="quail-egg">
+                                <label for="quail-egg">Quail {{value}}s</label><br>
+
+                                <input type="radio" id="duck" name="food-type" value="duck-egg">
+                                <label for="duck-egg">Duck {{value}}s</label>
+                            {% elif value == 'meat' : %}
+                                <input type="radio" id="chicken-meat" name="food-type" value="chicken-meat">
+                                <label for="chicken-meat">Chicken {{value}}s</label><br>
+
+                                <input type="radio" id="beef-meat" name="food-type" value="beef-meat">
+                                <label for="beef-meat">Beef {{value}}s</label><br>
+
+                                <input type="radio" id="duck-meat" name="food-type" value="duck-meat">
+                                <label for="duck-meat">Duck {{value}}s</label>
+                            {% elif value == 'vegetable' : %}
+                                <input type="radio" id="broccoli" name="food-type" value="broccoli">
+                                <label for="broccoli">Broccoli's</label><br>
+
+                                <input type="radio" id="cabbage" name="food-type" value="cabbage">
+                                <label for="cabbage">Cabbage's</label><br>
+
+                                <input type="radio" id="spinach" name="food-type" value="spinach">
+                                <label for="spinach">Spinach's</label>
+                            {% elif value == 'flour' : %}
+                                <input type="radio" id="noodles" name="food-type" value="noodles">
+                                <label for="noodles">Noodles</label><br>
+
+                                <input type="radio" id="vermicelli" name="food-type" value="vermicelli">
+                                <label for="vermicelli">Vermicelli's</label><br>
+
+                                <input type="radio" id="vegetarian" name="food-type" value="vegetarian">
+                                <label for="vegetarian">Vegetarian's</label>
+                            {% endif %}                            
+
+                        </div>
+                        <p>2. Select type of calories :</p>
+                        <div style="margin-left:25px;">
+                            <input type="radio" id="high" name="calories-type" value="high">
+                            <label for="high">High Calories</label><br>
+
+                            <input type="radio" id="normal" name="calories-type" value="normal">
+                            <label for="normal">Normal Calories</label><br>
+
+                            <input type="radio" id="low" name="calories-type" value="low">
+                            <label for="low">Low Calories</label>
+                        </div>
+                        <p>3. Please select flavor of dish :</p>
+                        <div style="margin-left:25px;">
+                            <input type="radio" id="spicy" name="flavor-type" value="spicy">
+                            <label for="spicy">Spicy</label><br>
+
+                            <input type="radio" id="sweet" name="flavor-type" value="sweet">
+                            <label for="sweet">Sweet</label><br>
+
+                            <input type="radio" id="salty" name="flavor-type" value="salty">
+                            <label for="salty">Salty</label><br>
+                        </div>
+                        <input class="btn btn-lg btn-secondary mr-2 ml-2 float-right" type="submit" value="submit">
+                    </h4>
+                </form>
+            </div>
+        </div>
+ 
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+ 
+</html>
